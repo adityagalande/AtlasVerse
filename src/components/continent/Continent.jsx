@@ -1,19 +1,23 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import useCountryInfo from "../../custom_hooks/useCountryInfo";
+import { Link } from "react-router-dom";
 
 function Continent() {
 
     const res = useCountryInfo();
 
-    console.log(res);
-
+    res.map((item) => console.log(item.name.common))
 
     return (
-        <>
-        Continent
-            {/* {res} */}
-        </>
+        <div className="flex justify-center items-center flex-wrap"> 
+            {res.map((item) => (
+                <div className="flex flex-wrap justify-center items-center p-8 border">
+                    <Link to={"/card"}>{item.name.common}</Link>
+                    <div><img src={item.flags.png} alt="Img"  className="h-12 p-2"/></div>
+                </div>
+            ) )}
+        </div>
     );
 }
 

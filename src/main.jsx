@@ -12,6 +12,7 @@ import Footer from './components/footer/Footer.jsx'
 import Country from './components/country/Country.jsx'
 import Continent from './components/continent/Continent.jsx'
 import ErrorPage from './components/error_page/ErrorPage.jsx'
+import Card from './components/card/Card.jsx'
 
 
 const router = createBrowserRouter(
@@ -22,6 +23,7 @@ const router = createBrowserRouter(
       <Route path="footer" element={<Footer />} />
       <Route path="country" element={<Country />} />
       <Route path="continent" element={<Continent />} />
+      <Route path='card' element={<Card />}/>
       <Route path="*" element={<ErrorPage />} />
     </Route>
   )
