@@ -13,6 +13,7 @@ import Country from './components/country/Country.jsx'
 import Continent from './components/continent/Continent.jsx'
 import ErrorPage from './components/error_page/ErrorPage.jsx'
 import Card from './components/card/Card.jsx'
+import CountryDetails from './components/country_details/CountryDetails.jsx'
 
 
 const router = createBrowserRouter(
@@ -24,6 +25,7 @@ const router = createBrowserRouter(
       <Route path="country" element={<Country />} />
       <Route path="continent" element={<Continent />} />
       <Route path='card' element={<Card />}/>
+      <Route path='details/:data' element={<CountryDetails />} />
       <Route path="*" element={<ErrorPage />} />
     </Route>
   )
