@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback, useState } from "react";
 import { useParams, Link } from "react-router-dom"; 
 
 import useSingleCountry from "../../custom_hooks/useSingleCountry";
@@ -6,7 +6,10 @@ import useSingleCountry from "../../custom_hooks/useSingleCountry";
 function CountryDetails() {
 
     const {data} = useParams();
-    let countryData = useSingleCountry(data);
+    const countryData = useSingleCountry(data);
+
+    
+    
 
 
 
