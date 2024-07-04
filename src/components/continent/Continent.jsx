@@ -1,5 +1,4 @@
 import React from "react";
-import { useState, useEffect } from "react";
 import useCountryInfo from "../../custom_hooks/useCountryInfo";
 import { Link } from "react-router-dom";
 

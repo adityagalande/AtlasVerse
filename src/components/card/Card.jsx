@@ -5,7 +5,9 @@ function Card() {
 
 
     return(
-        <h1>data</h1>
+        <>
+            Card Data 
+        </>
     );
 }
 
