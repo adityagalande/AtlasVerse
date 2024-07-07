@@ -7,11 +7,9 @@ function useSingleCountry(country = "france republic") {
     useEffect(() => {
         fetch(`https://restcountries.com/v3.1/name/${country}`)
         .then((res) => (res.json()))
-            .then((data) => (setRes(data)))
+        .then((data) => (setRes(data)))
         .catch((e) => console.error(e))
     }, [])
-
-    console.log(res);
 
     return res;
 }

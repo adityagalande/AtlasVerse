@@ -14,6 +14,7 @@ function CountryDetails() {
             {countryData.map((item) => (
                 <div key={uniqueKey} className="flex flex-wrap justify-center items-center p-8 border">
                     <Link to={`/card`}>{item.name.common}</Link>
+                    {/* <h1 to={`/card`}>{item.name.common}</h1> */}
                     <div><img src={item.flags.png} alt="Img" className="h-12 p-2" /></div>
                 </div>
             ))}

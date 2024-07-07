@@ -1,32 +1,22 @@
-import React, { useId } from "react";
+import React, { useEffect, useId, useState } from "react";
 
 // component
 import useCountryInfo from "../../custom_hooks/useCountryInfo";
 
 function Country() {
 
+    const [items, setItems] = useState([]);
     const continentData = useCountryInfo();
-    const uniKey = useId()
+    /*
+    function getNorthAmerica(){
+        const res = continentData.filter((item) => item.continents.includes("North America"))
+        setItems(res);
+        console.log(items[0])
+    }*/
 
     return (
-        <div className=" flex flex-row flex-wrap">
-            <div className="flex flex-wrap">{
-                continentData.map((item) => (
-                    <h1 key={item.name.common} >{item.continents == "North America" ? <div className="">
-                        <div className="p-4">
-                            <p>{item.name.common}</p>
-                            <img src={item.flags.png} alt="" />
-                        </div>
-                    </div> : ""}</h1>
-                ))
-                }</div>
-            
-            {/* <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div> */}
-        </div>
+        <div className=" flex flex-row flex-wrap"> hahaha </div>
+        //<button onClick={getNorthAmerica} className="bg-red-200 p-2" > North America</button>
     );
 }
 
