@@ -1,22 +1,25 @@
 import React, { useEffect, useId, useState } from "react";
 
 // component
+import Card from "../card/Card";
 import useCountryInfo from "../../custom_hooks/useCountryInfo";
 
 function Country() {
 
-    const [items, setItems] = useState([]);
-    const continentData = useCountryInfo();
-    /*
-    function getNorthAmerica(){
-        const res = continentData.filter((item) => item.continents.includes("North America"))
-        setItems(res);
-        console.log(items[0])
-    }*/
+    const res = useCountryInfo();
 
     return (
-        <div className=" flex flex-row flex-wrap"> hahaha </div>
-        //<button onClick={getNorthAmerica} className="bg-red-200 p-2" > North America</button>
+        <div className="flex justify-center items-center flex-wrap">
+            {res.map((item) => (
+                <Card
+                    countryName={item.name.common}
+                    countryImg={item.flags.png}
+                    countryPopulation={item.population}
+                    countryRegion={item.region}
+                    countryLanguage={item.name.common == "Antarctica" ? "NA" : Object.keys(item.languages).length > 1 ? Object.values(item.languages)[1] : Object.values(item.languages)[0]}
+                    countryCurrency={item.region == "Antarctic" ? "NA" : (Object.values(item.currencies))[0].name ? (Object.values(item.currencies))[0].name : "NA"} />
+            ))}
+        </div>
     );
 }
 

@@ -4,8 +4,7 @@ import { NavLink } from "react-router-dom";
 function Home() {
     return(
         <>
-            home
-            <NavLink to={"details"} >Details</NavLink>
+            <img className="h-screen w-screen justify-center items-center" src="src/assets/homepage.png" alt="" />
         </>
     );
 }
